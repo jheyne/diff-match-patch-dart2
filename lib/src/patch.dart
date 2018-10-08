@@ -156,7 +156,7 @@ List<Patch> patchFromText(String textline) {
         String line;
         try {
           line = Uri.decodeFull(text[textPointer].substring(1));
-        } on ArgumentError catch (e) {
+        } on ArgumentError {
           // Malformed URI sequence.
           throw new ArgumentError(
               'Illegal escape in patch_fromText: $line');
