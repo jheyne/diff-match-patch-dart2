@@ -18,14 +18,14 @@
  * limitations under the License.
  */
 
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'package:diff_match_patch/src/diff.dart';
 
 Diff deq(String t) => new Diff(DIFF_EQUAL, t);
 Diff ddel(String t) => new Diff(DIFF_DELETE, t);
 Diff dins(String t) => new Diff(DIFF_INSERT, t);
 
-List<String> _rebuildTexts(diffs) {
+List<String> _rebuildTexts(List<Diff> diffs) {
   // Construct the two texts which made up the diff originally.
   final text1 = new StringBuffer();
   final text2 = new StringBuffer();
@@ -316,7 +316,7 @@ main() {
     group("Cleanup Semantic", () {
       // Cleanup semantically trivial equalities.
       test("Null case", () {
-        var diffs = [];
+        var diffs = <Diff>[];
         cleanupSemantic(diffs);
         expect(diffs, equals([]));
       });
@@ -375,7 +375,7 @@ main() {
     group("Cleanup Efficiency", () {
       // Cleanup operationally trivial equalities.
       test("Null case", () {
-        var diffs = [];
+        var diffs = <Diff>[];
         cleanupEfficiency(diffs, 4);
         expect(diffs, equals([]));
       });

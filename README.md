@@ -1,3 +1,8 @@
+This is port to Dart 2.0 of localvoid's implementation. There are no intended behavioral
+changes, and all of localvoid's original tests pass. Ideally, this will be moved to
+localvoid's repository and pub package.
+
+
 # Diff Match Patch
 
 This is a port of [google-diff-match-patch](https://code.google.com/p/google-diff-match-patch/)

@@ -5,5 +5,9 @@ authors:
 - Neil Fraser <neil.fraser@gmail.com>
 description: The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.
 homepage: http://github.com/localvoid/diff-match-patch
+
+environment:
+  sdk: '>=2.0.0 <3.0.0'
+
 dev_dependencies:
-  unittest: any
+  test: any
